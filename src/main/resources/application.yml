@@ -9,4 +9,4 @@ cloud:
       access-key: 
       secret-key: 
     end-point:
-      uri: 
+      uri:

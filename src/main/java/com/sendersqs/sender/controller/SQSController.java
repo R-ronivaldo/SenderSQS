@@ -39,11 +39,14 @@ public class SQSController {
         User user = new User();
         user.setId(myMap.get("id"));
         user.setUsername(myMap.get("username"));
+        user.setPassword(myMap.get("password"));
         user.setEmail(myMap.get("email"));
+        user.setCreated_at(myMap.get("created_at"));
+        user.setUpdated_at(myMap.get("updated_at"));
         
         System.out.println("Queue Messages: " + message);
 
-        sendEmail.sendEmail(user.getEmail(), ""+user.getId()+user.getUsername()+"","Test Java");
+        sendEmail.sendEmail(user.getEmail(), "username: " +user.getUsername()+ ", Created: "+user.getCreated_at()+"","Test Java");
     }
 
     private Map<String, String> convertPayloadToMap(String payload){
